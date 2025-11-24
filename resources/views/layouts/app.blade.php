@@ -171,47 +171,6 @@
             line-height: 1.3;
         }
 
-        /* Responsive Logo Adjustments */
-        @media screen and (max-width: 768px) {
-            .logo {
-                gap: 10px;
-            }
-
-            .logo-icon {
-                width: 45px;
-                height: 45px;
-            }
-
-            .logo-text h1 {
-                font-size: 18px;
-            }
-
-            .logo-text p {
-                font-size: 9px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .logo {
-                gap: 8px;
-            }
-
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .logo-text h1 {
-                font-size: 16px;
-            }
-
-            .logo-text p {
-                font-size: 8px;
-                letter-spacing: 0.8px;
-            }
-        }
-
-
         /* Navigation */
         nav {
             display: flex;
@@ -352,32 +311,59 @@
             font-size: 18px;
         }
 
-        /* ===== Footer ===== */
+        /* ===== Footer with Background ===== */
         footer {
             background: var(--primary-blue);
             color: var(--text-white);
             padding: 80px 0 0;
             margin-top: 120px;
             position: relative;
+            overflow: hidden;
         }
 
+        /* Footer Background Image */
         footer::before {
             content: '';
             position: absolute;
-            top: -60px;
+            top: 0;
             left: 0;
-            right: 0;
-            height: 60px;
-            background: linear-gradient(to bottom, transparent, var(--bg-white));
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ asset("pics/trust4.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.12;
+            filter: brightness(0.8);
+            z-index: 0;
+        }
+
+        /* Footer Gradient Overlay */
+        footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(
+                    ellipse at center,
+                    rgba(30, 64, 175, 0.92) 0%,
+                    rgba(30, 58, 138, 0.96) 100%
+                );
+            z-index: 1;
         }
 
         .footer-wave {
-            position: absolute;
+            position: relative;
             top: -2px;
             left: 0;
             width: 100%;
             overflow: hidden;
             line-height: 0;
+            z-index: 2;
         }
 
         .footer-wave svg {
@@ -388,6 +374,8 @@
         }
 
         .footer-container {
+            position: relative;
+            z-index: 2;
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 24px;
@@ -395,6 +383,11 @@
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 60px;
             margin-bottom: 60px;
+        }
+
+        .footer-section {
+            position: relative;
+            z-index: 2;
         }
 
         .footer-section h3 {
@@ -405,6 +398,7 @@
             color: var(--text-white);
             position: relative;
             padding-bottom: 12px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .footer-section h3::after {
@@ -419,14 +413,15 @@
         }
 
         .footer-section p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
             line-height: 1.8;
             margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .footer-section a {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             font-size: 14px;
             transition: all var(--transition-speed) ease;
@@ -471,16 +466,18 @@
             justify-content: center;
             width: 44px;
             height: 44px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
             transition: all var(--transition-speed) ease;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .social-links a:hover {
             background: var(--accent-yellow);
             color: var(--primary-blue);
             transform: translateY(-4px);
+            border-color: var(--accent-yellow);
         }
 
         /* Contact Info Styling */
@@ -500,9 +497,10 @@
 
         .contact-item a,
         .contact-item span {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
             line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .contact-item a:hover {
@@ -516,6 +514,8 @@
             text-align: center;
             font-size: 13px;
             color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 2;
         }
 
         .footer-bottom-container {
@@ -544,223 +544,6 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-
-        /* ===== Responsive Design ===== */
-        @media screen and (max-width: 1200px) {
-            .footer-container {
-                grid-template-columns: 2fr 1fr 1fr;
-                gap: 40px;
-            }
-
-            .footer-section:last-child {
-                grid-column: 1 / -1;
-            }
-        }
-
-        @media screen and (max-width: 992px) {
-            :root {
-                --header-height: 80px;
-            }
-
-            nav {
-                gap: 4px;
-            }
-
-            nav a {
-                padding: 8px 14px;
-                font-size: 14px;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            :root {
-                --header-height: 70px;
-            }
-
-            .header-container {
-                padding: 0 16px;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .logo-text h1 {
-                font-size: 18px;
-            }
-
-            .logo-text p {
-                font-size: 9px;
-            }
-
-            .logo-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 20px;
-            }
-
-            nav {
-                position: fixed;
-                top: var(--header-height);
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - var(--header-height));
-                background: var(--bg-white);
-                flex-direction: column;
-                align-items: stretch;
-                padding: 24px 16px;
-                gap: 8px;
-                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                overflow-y: auto;
-                box-shadow: var(--shadow-xl);
-            }
-
-            nav.active {
-                left: 0;
-            }
-
-            nav a {
-                width: 100%;
-                padding: 16px 20px;
-                border-radius: 12px;
-                font-size: 16px;
-                text-align: left;
-            }
-
-            nav a i {
-                font-size: 16px;
-            }
-
-            .nav-cta {
-                margin-left: 0;
-                margin-top: 16px;
-            }
-
-            .container {
-                padding: 0 16px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 0 16px;
-            }
-
-            .footer-bottom-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            footer {
-                margin-top: 80px;
-                padding: 60px 0 0;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .logo-icon {
-                width: 38px;
-                height: 38px;
-                font-size: 18px;
-            }
-
-            .logo-text h1 {
-                font-size: 16px;
-            }
-
-            .logo-text p {
-                font-size: 8px;
-            }
-        }
-
-        /* ===== Accessibility ===== */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Focus Styles for Accessibility */
-        a:focus-visible,
-        button:focus-visible {
-            outline: 3px solid var(--accent-yellow);
-            outline-offset: 2px;
-        }
-
-        /* ===== Print Styles ===== */
-        @media print {
-            header,
-            footer,
-            .menu-toggle,
-            .social-links {
-                display: none;
-            }
-
-            main {
-                margin-top: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                padding: 0;
-            }
-        }
-
-        /* ===== Loading Animation ===== */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-
-        .page-loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid var(--bg-lighter);
-            border-top-color: var(--primary-blue);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* ===== Utility Classes ===== */
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-1 { margin-top: 8px; }
-        .mt-2 { margin-top: 16px; }
-        .mt-3 { margin-top: 24px; }
-        .mt-4 { margin-top: 32px; }
-        .mt-5 { margin-top: 40px; }
-
-        .mb-1 { margin-bottom: 8px; }
-        .mb-2 { margin-bottom: 16px; }
-        .mb-3 { margin-bottom: 24px; }
-        .mb-4 { margin-bottom: 32px; }
-        .mb-5 { margin-bottom: 40px; }
-
 
         /* ===== Floating Contact Buttons ===== */
         .floating-contact-buttons {
@@ -838,8 +621,124 @@
             transform: scale(0.95);
         }
 
-        /* Responsive Adjustments */
+        /* ===== Responsive Design ===== */
+        @media screen and (max-width: 1200px) {
+            .footer-container {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 40px;
+            }
+
+            .footer-section:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            :root {
+                --header-height: 80px;
+            }
+
+            nav {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 8px 14px;
+                font-size: 14px;
+            }
+        }
+
         @media screen and (max-width: 768px) {
+            :root {
+                --header-height: 70px;
+            }
+
+            .header-container {
+                padding: 0 16px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo-text h1 {
+                font-size: 18px;
+            }
+
+            .logo-text p {
+                font-size: 9px;
+            }
+
+            nav {
+                position: fixed;
+                top: var(--header-height);
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - var(--header-height));
+                background: var(--bg-white);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 24px 16px;
+                gap: 8px;
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                overflow-y: auto;
+                box-shadow: var(--shadow-xl);
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 16px 20px;
+                border-radius: 12px;
+                font-size: 16px;
+                text-align: left;
+            }
+
+            nav a i {
+                font-size: 16px;
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 16px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 16px;
+            }
+
+            .footer-bottom-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer {
+                margin-top: 80px;
+                padding: 60px 0 0;
+            }
+
+            footer::before {
+                background-attachment: scroll;
+            }
+
             .floating-contact-buttons {
                 bottom: 20px;
                 right: 20px;
@@ -854,6 +753,24 @@
         }
 
         @media screen and (max-width: 480px) {
+            .logo {
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text h1 {
+                font-size: 16px;
+            }
+
+            .logo-text p {
+                font-size: 8px;
+                letter-spacing: 0.8px;
+            }
+
             .floating-contact-buttons {
                 bottom: 15px;
                 right: 15px;
@@ -867,19 +784,99 @@
             }
         }
 
-        /* Hide on Print */
-        @media print {
-            .floating-contact-buttons {
-                display: none;
+        /* ===== Accessibility ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
 
-        /* Accessibility - Focus States */
+        /* Focus Styles for Accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent-yellow);
+            outline-offset: 2px;
+        }
+
         .floating-btn:focus-visible {
             outline: 3px solid var(--accent-yellow);
             outline-offset: 3px;
         }
 
+        /* ===== Print Styles ===== */
+        @media print {
+            header,
+            footer,
+            .menu-toggle,
+            .social-links,
+            .floating-contact-buttons {
+                display: none;
+            }
+
+            main {
+                margin-top: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+
+        /* ===== Loading Animation ===== */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--bg-lighter);
+            border-top-color: var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== Utility Classes ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 { margin-top: 8px; }
+        .mt-2 { margin-top: 16px; }
+        .mt-3 { margin-top: 24px; }
+        .mt-4 { margin-top: 32px; }
+        .mt-5 { margin-top: 40px; }
+
+        .mb-1 { margin-bottom: 8px; }
+        .mb-2 { margin-bottom: 16px; }
+        .mb-3 { margin-bottom: 24px; }
+        .mb-4 { margin-bottom: 32px; }
+        .mb-5 { margin-bottom: 40px; }
     </style>
 
     @stack('styles')
@@ -967,7 +964,6 @@
 
     <div class="footer-container">
         <!-- Company Info -->
-            
         <div class="footer-section">
             <h3>TrustProp Aluminium</h3>
             <p>Zimbabwe's leading provider of premium aluminium and glass solutions for residential, commercial, and industrial properties.</p>
@@ -976,38 +972,38 @@
             </p>
             <div class="social-links">
                 <a href="https://www.facebook.com/truspropzw" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Facebook" 
-                title="Follow us on Facebook">
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Facebook" 
+                   title="Follow us on Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://twitter.com/truspropzw" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Twitter" 
-                title="Follow us on Twitter">
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Twitter" 
+                   title="Follow us on Twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
                 <a href="https://www.instagram.com/truspropzw" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Instagram" 
-                title="Follow us on Instagram">
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Instagram" 
+                   title="Follow us on Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://www.linkedin.com/company/trustprop-aluminium" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="LinkedIn" 
-                title="Connect on LinkedIn">
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn" 
+                   title="Connect on LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="https://wa.me/263778141191?text=Hello%20TrustProp%20Aluminium,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="WhatsApp" 
-                title="Chat with us on WhatsApp">
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="WhatsApp" 
+                   title="Chat with us on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
@@ -1086,7 +1082,7 @@
             </div>
             <div class="contact-item">
                 <i class="fas fa-industry"></i>
-                <span style="color: rgba(255, 255, 255, 0.85); font-size: 13px;">
+                <span style="color: rgba(255, 255, 255, 0.9); font-size: 13px;">
                     <strong style="color: var(--accent-yellow);">Plant:</strong> Pokugara, Harare
                 </span>
             </div>
@@ -1104,14 +1100,6 @@
                     <a href="mailto:admin@trustprop.co.zw">admin@trustprop.co.zw</a>
                 </div>
             </div>
-            {{-- <div class="contact-item">
-                <i class="fas fa-globe"></i>
-                <a href="https://www.trustprop.co.zw" target="_blank">www.trustprop.co.zw</a>
-            </div> --}}
-            {{-- <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 8:00 AM - 1:00 PM<br>Sun: Closed</span>
-            </div> --}}
         </div>
     </div>
 

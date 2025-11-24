@@ -454,7 +454,7 @@
         font-size: 0.95rem;
     }
 
-    /* Why Choose Us Section */
+    /* Why Choose Us Section - Updated with More Visible Background */
     .why-choose-section {
         background: var(--primary-blue);
         padding: 80px 24px;
@@ -464,42 +464,56 @@
         overflow: hidden;
     }
 
+    /* Background Image Overlay - Increased Opacity */
     .why-choose-section::before {
         content: '';
         position: absolute;
-        top: -100px;
-        right: -100px;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(252, 211, 77, 0.15) 0%, transparent 70%);
-        border-radius: 50%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{ asset('pics/trust6.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.4;
+        filter: brightness(0.85);
+        z-index: 0;
     }
 
+    /* Lighter Gradient Overlay - More transparency */
     .why-choose-section::after {
         content: '';
         position: absolute;
-        bottom: -80px;
-        left: -80px;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
-        border-radius: 50%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(
+                ellipse at center,
+                rgba(30, 64, 175, 0.65) 0%,
+                rgba(30, 64, 175, 0.80) 100%
+            );
+        z-index: 1;
     }
 
     .why-choose-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         max-width: var(--max-width);
         margin: 0 auto;
     }
 
     .why-choose-section .section-header h2 {
         color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     .why-choose-section .section-badge {
-        background: rgba(252, 211, 77, 0.2);
+        background: rgba(252, 211, 77, 0.25);
         color: var(--accent-yellow);
+        backdrop-filter: blur(8px);
     }
 
     .features-list {
@@ -510,22 +524,25 @@
         list-style: none;
     }
 
+    /* Enhanced Feature Cards for Better Contrast */
     .features-list li {
         display: flex;
         align-items: flex-start;
         gap: 16px;
         padding: 24px;
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.15);
         border-radius: var(--border-radius);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .features-list li:hover {
-        background: rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.22);
         transform: translateX(8px);
-        border-color: rgba(252, 211, 77, 0.3);
+        border-color: rgba(252, 211, 77, 0.5);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
     .features-list i {
@@ -542,12 +559,14 @@
         color: white;
         font-weight: 600;
         font-family: 'Space Grotesk', sans-serif;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
 
     .features-list span {
         font-size: 0.9rem;
-        opacity: 0.9;
+        opacity: 0.95;
         line-height: 1.6;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
 
     /* CTA Section */
@@ -869,7 +888,7 @@
         <div class="section-header">
             <span class="section-badge">Why Us</span>
             <h2>Why Choose TrustProp Aluminium?</h2>
-            <p style="color: rgba(255, 255, 255, 0.9);">
+            <p style="color: rgba(255, 255, 255, 0.95);">
                 We combine expertise, quality, and customer satisfaction to deliver exceptional results every time
             </p>
         </div>
