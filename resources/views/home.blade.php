@@ -721,16 +721,16 @@
                 <img src="{{ asset('slider/slider01.jpg') }}" alt="TrustProp Aluminium Project 1">
             </div>
             <div class="slide">
-                <img src="{{ asset('slider/slider02.jpeg') }}" alt="TrustProp Aluminium Project 2">
+                <img src="{{ asset('pics/trust6.jpg') }}" alt="TrustProp Aluminium Project 2">
             </div>
             <div class="slide">
-                <img src="{{ asset('slider/slider03.jpg') }}" alt="TrustProp Aluminium Project 3">
+                <img src="{{ asset('pics/trust1.jpg') }}" alt="TrustProp Aluminium Project 3">
             </div>
             <div class="slide">
-                <img src="{{ asset('slider/slider04.jpeg') }}" alt="TrustProp Aluminium Project 4">
+                <img src="{{ asset('pics/trust4.jpg') }}" alt="TrustProp Aluminium Project 4">
             </div>
             <div class="slide">
-                <img src="{{ asset('slider/slider05.jpg') }}" alt="TrustProp Aluminium Project 5">
+                <img src="{{ asset('pics/trust6.jpg') }}" alt="TrustProp Aluminium Project 5">
             </div>
         </div>
     </div>
