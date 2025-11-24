@@ -967,6 +967,7 @@
 
     <div class="footer-container">
         <!-- Company Info -->
+            
         <div class="footer-section">
             <h3>TrustProp Aluminium</h3>
             <p>Zimbabwe's leading provider of premium aluminium and glass solutions for residential, commercial, and industrial properties.</p>
@@ -974,26 +975,41 @@
                 "Built in Trust. Framed in Perfection."
             </p>
             <div class="social-links">
-                <a href="#" aria-label="Facebook" title="Facebook">
+                <a href="https://www.facebook.com/truspropzw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Facebook" 
+                title="Follow us on Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" aria-label="Twitter" title="Twitter">
+                <a href="https://twitter.com/truspropzw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Twitter" 
+                title="Follow us on Twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="#" aria-label="Instagram" title="Instagram">
+                <a href="https://www.instagram.com/truspropzw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Instagram" 
+                title="Follow us on Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/trustprop-aluminium" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="LinkedIn" 
+                title="Connect on LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-               <a href="https://wa.me/263778141191?text=Hello%20TrustProp%20Aluminium,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
+                <a href="https://wa.me/263778141191?text=Hello%20TrustProp%20Aluminium,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="WhatsApp" 
                 title="Chat with us on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-
             </div>
         </div>
 
@@ -1088,10 +1104,10 @@
                     <a href="mailto:admin@trustprop.co.zw">admin@trustprop.co.zw</a>
                 </div>
             </div>
-            <div class="contact-item">
+            {{-- <div class="contact-item">
                 <i class="fas fa-globe"></i>
                 <a href="https://www.trustprop.co.zw" target="_blank">www.trustprop.co.zw</a>
-            </div>
+            </div> --}}
             {{-- <div class="contact-item">
                 <i class="fas fa-clock"></i>
                 <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 8:00 AM - 1:00 PM<br>Sun: Closed</span>
