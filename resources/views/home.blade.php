@@ -6,17 +6,70 @@
 
 @push('styles')
 <style>
-    /* Hero Section */
+    /* Hero Section with Slider */
     .hero-section {
         position: relative;
         background: linear-gradient(135deg, var(--primary-blue) 0%, var(--royal-blue) 100%);
         color: white;
-        padding: 100px 24px 120px;
+        padding: 0;
         margin: 0 -24px 80px;
         overflow: hidden;
+        height: 650px;
     }
 
-    .hero-section::before {
+    /* Slider Container */
+    .hero-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .slider-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Overlay for better text readability */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            135deg,
+            rgba(30, 64, 175, 0.85) 0%,
+            rgba(37, 99, 235, 0.75) 100%
+        );
+        z-index: 1;
+    }
+
+    .hero-overlay::before {
         content: '';
         position: absolute;
         top: 0;
@@ -24,42 +77,108 @@
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 20% 50%, rgba(252, 211, 77, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 20% 50%, rgba(252, 211, 77, 0.15) 0%, transparent 50%),
             radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.2) 0%, transparent 50%);
         pointer-events: none;
     }
 
-    .hero-section::after {
-        content: '';
+    /* Slider Controls */
+    .slider-controls {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100px;
-        background: linear-gradient(to top, var(--bg-white), transparent);
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        display: flex;
+        gap: 12px;
     }
 
+    .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .slider-dot:hover {
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(1.2);
+    }
+
+    .slider-dot.active {
+        background: var(--accent-yellow);
+        border-color: var(--accent-yellow);
+        width: 32px;
+        border-radius: 6px;
+    }
+
+    /* Navigation Arrows */
+    .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        color: white;
+        font-size: 20px;
+    }
+
+    .slider-arrow:hover {
+        background: var(--accent-yellow);
+        border-color: var(--accent-yellow);
+        color: var(--text-dark);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-arrow.prev {
+        left: 30px;
+    }
+
+    .slider-arrow.next {
+        right: 30px;
+    }
+
+    /* Hero Content */
     .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         max-width: 1100px;
         margin: 0 auto;
         text-align: center;
+        padding: 140px 24px 100px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .hero-badge {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: rgba(252, 211, 77, 0.2);
-        border: 1px solid rgba(252, 211, 77, 0.4);
-        padding: 8px 20px;
+        background: rgba(252, 211, 77, 0.25);
+        border: 1px solid rgba(252, 211, 77, 0.5);
+        padding: 10px 24px;
         border-radius: 50px;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 600;
         margin-bottom: 24px;
         animation: fadeInDown 0.8s ease;
         backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .hero-badge i {
@@ -74,16 +193,18 @@
         animation: fadeInDown 0.8s ease 0.1s both;
         line-height: 1.1;
         letter-spacing: -2px;
+        text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .hero-content .tagline {
-        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
         font-weight: 400;
         margin-bottom: 20px;
         animation: fadeInUp 0.8s ease 0.2s both;
         letter-spacing: 0.5px;
         color: var(--accent-yellow);
         font-style: italic;
+        text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     .hero-content .lead {
@@ -93,7 +214,8 @@
         margin: 0 auto 40px;
         animation: fadeInUp 0.8s ease 0.3s both;
         opacity: 0.95;
-        font-weight: 300;
+        font-weight: 400;
+        text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
     }
 
     .cta-buttons {
@@ -130,9 +252,9 @@
     }
 
     .btn-outline {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.15);
         color: white;
-        border-color: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(10px);
     }
 
@@ -483,8 +605,30 @@
     /* Responsive */
     @media (max-width: 768px) {
         .hero-section {
-            padding: 80px 16px 100px;
+            height: 550px;
             margin: 0 -16px 60px;
+        }
+
+        .hero-content {
+            padding: 100px 16px 80px;
+        }
+
+        .slider-arrow {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+
+        .slider-arrow.prev {
+            left: 15px;
+        }
+
+        .slider-arrow.next {
+            right: 15px;
+        }
+
+        .slider-controls {
+            bottom: 20px;
         }
 
         .stats-section {
@@ -539,12 +683,51 @@
             margin-top: 60px;
         }
     }
+
+    @media (max-width: 480px) {
+        .hero-section {
+            height: 500px;
+        }
+    }
 </style>
 @endpush
 
 @section('content')
-<!-- Hero Section -->
+<!-- Hero Section with Slider -->
 <div class="hero-section">
+    <!-- Image Slider -->
+    <div class="hero-slider">
+        <div class="slider-track">
+            <div class="slide active">
+                <img src="{{ asset('slider/slider01.jpg') }}" alt="TrustProp Aluminium Project 1">
+            </div>
+            <div class="slide">
+                <img src="{{ asset('slider/slider02.jpeg') }}" alt="TrustProp Aluminium Project 2">
+            </div>
+            <div class="slide">
+                <img src="{{ asset('slider/slider03.jpg') }}" alt="TrustProp Aluminium Project 3">
+            </div>
+            <div class="slide">
+                <img src="{{ asset('slider/slider04.jpeg') }}" alt="TrustProp Aluminium Project 4">
+            </div>
+            <div class="slide">
+                <img src="{{ asset('slider/slider05.jpg') }}" alt="TrustProp Aluminium Project 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Navigation Arrows -->
+    <div class="slider-arrow prev" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="slider-arrow next" onclick="changeSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- Hero Content -->
     <div class="hero-content">
         <div class="hero-badge">
             <i class="fas fa-award"></i>
@@ -564,6 +747,15 @@
                 <i class="fas fa-paper-plane"></i> Get a Free Quote
             </a>
         </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <div class="slider-controls">
+        <span class="slider-dot active" onclick="goToSlide(0)"></span>
+        <span class="slider-dot" onclick="goToSlide(1)"></span>
+        <span class="slider-dot" onclick="goToSlide(2)"></span>
+        <span class="slider-dot" onclick="goToSlide(3)"></span>
+        <span class="slider-dot" onclick="goToSlide(4)"></span>
     </div>
 </div>
 
@@ -751,6 +943,75 @@
 
 @push('scripts')
 <script>
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let autoSlideInterval;
+
+    function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Add active class to current slide and dot
+        if (slides[index]) {
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        currentSlide = index;
+    }
+
+    function changeSlide(direction) {
+        currentSlide += direction;
+        
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        } else if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        
+        showSlide(currentSlide);
+        resetAutoSlide();
+    }
+
+    function goToSlide(index) {
+        showSlide(index);
+        resetAutoSlide();
+    }
+
+    function autoSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+        showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(autoSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    // Start auto-sliding when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        startAutoSlide();
+        
+        // Pause auto-slide on hover
+        const heroSection = document.querySelector('.hero-section');
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+    });
+
     // Counter animation for stats
     document.addEventListener('DOMContentLoaded', function() {
         const statNumbers = document.querySelectorAll('.stat-number');

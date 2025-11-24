@@ -15,7 +15,8 @@
     <meta property="og:url" content="{{ url()->current() }}">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/trustprop1.png') }}">
+
     
     <title>@yield('title', 'Home') | TrustProp Aluminium</title>
     
@@ -119,22 +120,35 @@
         }
 
         .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--royal-blue) 100%);
-            border-radius: 10px;
+            width: 55px;
+            height: 55px;
+            background: transparent !important;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            color: var(--text-white);
-            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+            box-shadow: none !important;
             transition: all var(--transition-speed) ease;
+            padding: 0;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background: transparent !important;
         }
 
         .logo:hover .logo-icon {
-            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
-            transform: rotate(-5deg) scale(1.05);
+            box-shadow: none !important;
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .logo-text h1 {
@@ -154,7 +168,49 @@
             margin: 0;
             color: var(--text-medium);
             text-transform: uppercase;
+            line-height: 1.3;
         }
+
+        /* Responsive Logo Adjustments */
+        @media screen and (max-width: 768px) {
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo-text h1 {
+                font-size: 18px;
+            }
+
+            .logo-text p {
+                font-size: 9px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text h1 {
+                font-size: 16px;
+            }
+
+            .logo-text p {
+                font-size: 8px;
+                letter-spacing: 0.8px;
+            }
+        }
+
 
         /* Navigation */
         nav {
@@ -704,6 +760,126 @@
         .mb-3 { margin-bottom: 24px; }
         .mb-4 { margin-bottom: 32px; }
         .mb-5 { margin-bottom: 40px; }
+
+
+        /* ===== Floating Contact Buttons ===== */
+        .floating-contact-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            animation: pulse-button 2s infinite;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--accent-yellow) 100%);
+            color: var(--text-dark);
+        }
+
+        .phone-btn:hover {
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, #F59E0B 100%);
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse-button {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            }
+        }
+
+        .phone-btn {
+            animation: pulse-button-phone 2s infinite;
+        }
+
+        @keyframes pulse-button-phone {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(252, 211, 77, 0.5);
+            }
+        }
+
+        /* Ripple Effect on Click */
+        .floating-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .floating-contact-buttons {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+
+            .floating-btn {
+                width: 56px;
+                height: 56px;
+                font-size: 26px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .floating-contact-buttons {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+
+        /* Hide on Print */
+        @media print {
+            .floating-contact-buttons {
+                display: none;
+            }
+        }
+
+        /* Accessibility - Focus States */
+        .floating-btn:focus-visible {
+            outline: 3px solid var(--accent-yellow);
+            outline-offset: 3px;
+        }
+
     </style>
 
     @stack('styles')
@@ -721,7 +897,8 @@
         <!-- Logo -->
         <a href="{{ route('home') }}" class="logo">
             <div class="logo-icon">
-                <i class="fas fa-building"></i>
+                <img src="{{ asset('images/trustprop1.png') }}" 
+                     alt="TrustProp Aluminium Logo">
             </div>
             <div class="logo-text">
                 <h1>TrustProp Aluminium</h1>
@@ -809,9 +986,14 @@
                 <a href="#" aria-label="LinkedIn" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" aria-label="WhatsApp" title="WhatsApp">
+               <a href="https://wa.me/263778141191?text=Hello%20TrustProp%20Aluminium,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="WhatsApp" 
+                title="Chat with us on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
+
             </div>
         </div>
 
@@ -884,20 +1066,36 @@
             <h3>Contact Us</h3>
             <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>123 Industrial Area, Harare, Zimbabwe</span>
+                <span>17B Lomagundi Road<br>Mt. Pleasant, Harare<br>Zimbabwe</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-industry"></i>
+                <span style="color: rgba(255, 255, 255, 0.85); font-size: 13px;">
+                    <strong style="color: var(--accent-yellow);">Plant:</strong> Pokugara, Harare
+                </span>
             </div>
             <div class="contact-item">
                 <i class="fas fa-phone"></i>
-                <a href="tel:+263123456789">+263 123 456 789</a>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <a href="tel:+263778141191">+263 77 814 1191</a>
+                    <a href="tel:+263788479546">+263 78 847 9546</a>
+                </div>
             </div>
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:info@trustpropaluminium.co.zw">info@trustpropaluminium.co.zw</a>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <a href="mailto:sales@trustprop.co.zw">sales@trustprop.co.zw</a>
+                    <a href="mailto:admin@trustprop.co.zw">admin@trustprop.co.zw</a>
+                </div>
             </div>
             <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 8:00 AM - 1:00 PM</span>
+                <i class="fas fa-globe"></i>
+                <a href="https://www.trustprop.co.zw" target="_blank">www.trustprop.co.zw</a>
             </div>
+            {{-- <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 8:00 AM - 1:00 PM<br>Sun: Closed</span>
+            </div> --}}
         </div>
     </div>
 
@@ -914,6 +1112,26 @@
         </div>
     </div>
 </footer>
+
+<!-- Floating Contact Buttons -->
+<div class="floating-contact-buttons">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/263778141191" 
+       class="floating-btn whatsapp-btn" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp"
+       title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Phone Call Button -->
+    <a href="tel:+263778141191" 
+       class="floating-btn phone-btn" 
+       aria-label="Call Us"
+       title="Call Us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+</div>
 
 <!-- JavaScript -->
 <script>

@@ -14,7 +14,7 @@ class PageController extends Controller
     {
         return view('home', [
             'title' => 'Home',
-            'metaDescription' => 'Welcome to our glass and aluminium services',
+            'metaDescription' => 'TrustProp Aluminium - Leading Zimbabwean provider of aluminium and glass solutions',
         ]);
     }
 
@@ -25,7 +25,7 @@ class PageController extends Controller
     {
         return view('about', [
             'title' => 'About Us',
-            'metaDescription' => 'Learn more about our company and expertise',
+            'metaDescription' => 'Learn about TrustProp Aluminium - Zimbabwe\'s most trusted partner for aluminium and glass solutions',
         ]);
     }
 
@@ -38,7 +38,7 @@ class PageController extends Controller
 
         return view('services', [
             'title' => 'Our Services',
-            'metaDescription' => 'Explore our range of glass and aluminium services',
+            'metaDescription' => 'Comprehensive aluminium and glass solutions including windows, doors, pergolas, and balustrades',
             'services' => $services,
         ]);
     }
@@ -50,7 +50,7 @@ class PageController extends Controller
     {
         return view('projects', [
             'title' => 'Our Projects',
-            'metaDescription' => 'View our completed projects and portfolio',
+            'metaDescription' => 'View our portfolio of completed aluminium and glass projects in Zimbabwe',
         ]);
     }
 
@@ -61,7 +61,7 @@ class PageController extends Controller
     {
         return view('contact', [
             'title' => 'Contact Us',
-            'metaDescription' => 'Get in touch with us for your glass and aluminium needs',
+            'metaDescription' => 'Get in touch with TrustProp Aluminium for professional aluminium and glass solutions',
         ]);
     }
 
@@ -74,14 +74,18 @@ class PageController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
-            'message' => 'required|string|max:1000',
+            'service' => 'nullable|string|max:100',
+            'message' => 'required|string|max:2000',
         ]);
 
-        // Handle the contact form submission
-        // e.g., send email, store in database, etc.
+        // Here you can:
+        // 1. Send email notification
+        // 2. Store in database
+        // 3. Send to CRM
+        // Example: Mail::to('sales@trustprop.co.zw')->send(new ContactFormMail($validated));
 
         return redirect()->route('contact')
-            ->with('success', 'Thank you for your message. We will get back to you soon!');
+            ->with('success', 'Thank you for your message! We will get back to you soon.');
     }
 
     /**
@@ -93,7 +97,7 @@ class PageController extends Controller
             [
                 'id' => 'glass-replacement',
                 'name' => 'Glass Replacement',
-                'icon' => 'fa-glass',
+                'icon' => 'fa-glass-whiskey',
                 'description' => 'Professional glass replacement services for residential and commercial properties',
             ],
             [
