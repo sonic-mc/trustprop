@@ -389,9 +389,10 @@
         </div>
         <div class="column-image">
             <div class="placeholder-image">
-                <i class="fas fa-building"></i>
+                <img src="{{ asset('slider/image2.jpg') }}" alt="Slider Image" style="width:100%; height:auto; object-fit:cover;">
             </div>
         </div>
+        
     </div>
 
     <!-- Mission & Vision -->

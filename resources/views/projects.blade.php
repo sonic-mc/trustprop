@@ -466,118 +466,121 @@
     </div>
 
     <!-- Projects Grid -->
-    <div class="projects-grid">
-        <!-- Residential Project 1 -->
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Residential Project 1: Pomona City Flats -->
         <div class="project-card" data-category="residential" data-animate>
             <div class="project-image">
                 <span class="project-category">Residential</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-home"></i>
-                </div>
+                <img src="{{ asset('project/image01.jpg') }}" alt="Pomona City Flats aluminium and glass project">
             </div>
             <div class="project-content">
-                <h3 class="project-title">Luxury Villa - Borrowdale</h3>
+                <h3 class="project-title">Pomona City Flats – Aluminium &amp; Glass Project</h3>
                 <p class="project-description">
-                    Complete aluminium windows, folding doors, and glass balustrades for a modern luxury estate.
+                    Custom aluminium windows, sliding doors, balcony enclosures, and shopfront-style glazing for Pomona City Flats, a modern residential development in Harare North.
                 </p>
                 <div class="project-meta">
                     <div class="meta-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Borrowdale, Harare</span>
+                        <span>Pomona City, Harare North</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-calendar"></i>
                         <span>2024</span>
                     </div>
                 </div>
+                {{-- <a class="project-link" href="https://www.westprop.com/developments/pomona-city-flats/" target="_blank" rel="noopener">
+                    View development details
+                </a> --}}
             </div>
         </div>
-
-        <!-- Commercial Project 1 -->
-        <div class="project-card" data-category="commercial" data-animate>
+    
+        <!-- Residential Project 2: Pokugara Townhouses -->
+        <div class="project-card" data-category="residential" data-animate>
             <div class="project-image">
-                <span class="project-category">Commercial</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-building"></i>
-                </div>
+                <span class="project-category">Residential</span>
+                <img src="{{ asset('project/image02.jpg') }}" alt="Pokugara Townhouses aluminium and glass project">
             </div>
             <div class="project-content">
-                <h3 class="project-title">Corporate Office Complex</h3>
+                <h3 class="project-title">Pokugara Townhouses – Aluminium &amp; Glass Project</h3>
                 <p class="project-description">
-                    Modern curtain walling, sliding doors, and aluminium cladding for a prestigious office building.
+                    High-end aluminium sliding doors, patio doors, windows, and balcony enclosures tailored for the prestigious Pokugara Townhouses in Borrowdale West.
                 </p>
                 <div class="project-meta">
                     <div class="meta-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>CBD, Harare</span>
+                        <span>Borrowdale West, Harare</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-calendar"></i>
                         <span>2024</span>
                     </div>
                 </div>
+                {{-- <a class="project-link" href="https://www.westprop.com/developments/pokugara/" target="_blank" rel="noopener">
+                    View development details
+                </a> --}}
             </div>
         </div>
-
-        <!-- Residential Project 2 -->
+    
+        <!-- Residential Project 3: Millennium Heights Apartments -->
         <div class="project-card" data-category="residential" data-animate>
             <div class="project-image">
                 <span class="project-category">Residential</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-house-user"></i>
-                </div>
+                <img src="{{ asset('project/image03.webp') }}" alt="Millennium Heights Apartments aluminium and glass project">
             </div>
             <div class="project-content">
-                <h3 class="project-title">Modern Townhouses - Mt Pleasant</h3>
+                <h3 class="project-title">Millennium Heights Apartments – Aluminium &amp; Glass Project</h3>
                 <p class="project-description">
-                    Sliding windows, garage doors, and aluminium pergolas for a contemporary townhouse development.
+                    Bespoke glass balconies, sliding doors, and high-performance aluminium windows for Millennium Heights Block 6 in Borrowdale West.
                 </p>
                 <div class="project-meta">
                     <div class="meta-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Mt Pleasant, Harare</span>
+                        <span>Borrowdale West, Harare</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-calendar"></i>
                         <span>2023</span>
                     </div>
                 </div>
+                {{-- <a class="project-link" href="https://www.westprop.com/developments/millenium-heights/millenium-heights-block-6/" target="_blank" rel="noopener">
+                    View development details
+                </a> --}}
             </div>
         </div>
-
-        <!-- Hospitality Project 1 -->
-        <div class="project-card" data-category="hospitality" data-animate>
+    
+        <!-- Residential Project 4: The Hills Lifestyle Estate (In Progress) -->
+        <div class="project-card" data-category="residential" data-animate>
             <div class="project-image">
-                <span class="project-category">Hospitality</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-hotel"></i>
-                </div>
+                <span class="project-category">Residential</span>
+                <img src="{{ asset('project/image04.png') }}" alt="The Hills Lifestyle Estate aluminium and glass project">
             </div>
             <div class="project-content">
-                <h3 class="project-title">Boutique Hotel Renovation</h3>
+                <h3 class="project-title">The Hills Lifestyle Estate – Aluminium &amp; Glass Project (In Progress)</h3>
                 <p class="project-description">
-                    Full glazing replacement, folding doors, and glass balustrades for hotel upgrade.
+                    Ongoing supply of aluminium windows, sliding doors, glass balustrades, and panoramic glazing systems for Harare’s premier golf-focused residential estate.
                 </p>
                 <div class="project-meta">
                     <div class="meta-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Victoria Falls</span>
+                        <span>Borrowdale Brooke, Harare</span>
                     </div>
                     <div class="meta-item">
                         <i class="fas fa-calendar"></i>
-                        <span>2023</span>
+                        <span>In Progress</span>
                     </div>
                 </div>
+                {{-- <a class="project-link" href="https://www.westprop.com/developments/the-hills-lifestyle-estate/" target="_blank" rel="noopener">
+                    View development details
+                </a> --}}
             </div>
         </div>
-
-        <!-- Industrial Project 1 -->
+    
+        <!-- Existing Industrial Project 1 -->
         <div class="project-card" data-category="industrial" data-animate>
             <div class="project-image">
                 <span class="project-category">Industrial</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-industry"></i>
-                </div>
+                <img src="{{ asset('project/image01.jpg') }}" alt="Industrial manufacturing facility aluminium and glass project">
             </div>
             <div class="project-content">
                 <h3 class="project-title">Manufacturing Facility</h3>
@@ -596,92 +599,12 @@
                 </div>
             </div>
         </div>
-
-        <!-- Commercial Project 2 -->
+    
+        <!-- Existing Commercial Project 3 -->
         <div class="project-card" data-category="commercial" data-animate>
             <div class="project-image">
                 <span class="project-category">Commercial</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-store"></i>
-                </div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Retail Shopping Center</h3>
-                <p class="project-description">
-                    Shopfront glazing, automated doors, and aluminium facades for modern retail development.
-                </p>
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Avondale, Harare</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-calendar"></i>
-                        <span>2024</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Residential Project 3 -->
-        <div class="project-card" data-category="residential" data-animate>
-            <div class="project-image">
-                <span class="project-category">Residential</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-home"></i>
-                </div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Estate Development - Glen Lorne</h3>
-                <p class="project-description">
-                    Complete aluminium and glass solutions for a 20-unit gated estate including pergolas and balustrades.
-                </p>
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Glen Lorne, Harare</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-calendar"></i>
-                        <span>2024</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hospitality Project 2 -->
-        <div class="project-card" data-category="hospitality" data-animate>
-            <div class="project-image">
-                <span class="project-category">Hospitality</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-utensils"></i>
-                </div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Fine Dining Restaurant</h3>
-                <p class="project-description">
-                    Glass facades, folding doors, and aluminium pergola for outdoor dining experience.
-                </p>
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Newlands, Harare</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-calendar"></i>
-                        <span>2023</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Commercial Project 3 -->
-        <div class="project-card" data-category="commercial" data-animate>
-            <div class="project-image">
-                <span class="project-category">Commercial</span>
-                <div class="project-placeholder">
-                    <i class="fas fa-briefcase"></i>
-                </div>
+                <img src="{{ asset('project/image02.jpg') }}" alt="Business park aluminium and glass project">
             </div>
             <div class="project-content">
                 <h3 class="project-title">Business Park Development</h3>

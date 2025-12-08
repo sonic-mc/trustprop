@@ -999,7 +999,7 @@
                    title="Connect on LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://wa.me/263778141191?text=Hello%20TrustProp%20Aluminium,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
+                <a href="https://wa.me/+263781150517?text=Hello%20TrustProp%20Aluminium,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
                    target="_blank" 
                    rel="noopener noreferrer"
                    aria-label="WhatsApp" 
@@ -1089,8 +1089,8 @@
             <div class="contact-item">
                 <i class="fas fa-phone"></i>
                 <div style="display: flex; flex-direction: column; gap: 4px;">
-                    <a href="tel:+263778141191">+263 77 814 1191</a>
-                    <a href="tel:+263788479546">+263 78 847 9546</a>
+                    <a href="tel:+263778141191">+263 78 115 0517</a>
+                    {{-- <a href="tel:+263788479546">+263 78 847 9546</a> --}}
                 </div>
             </div>
             <div class="contact-item">
@@ -1120,7 +1120,7 @@
 <!-- Floating Contact Buttons -->
 <div class="floating-contact-buttons">
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/263778141191" 
+    <a href="https://wa.me/263781150517" 
        class="floating-btn whatsapp-btn" 
        target="_blank" 
        aria-label="Chat on WhatsApp"
@@ -1129,7 +1129,7 @@
     </a>
     
     <!-- Phone Call Button -->
-    <a href="tel:+263778141191" 
+    <a href="tel:+263781150517" 
        class="floating-btn phone-btn" 
        aria-label="Call Us"
        title="Call Us">

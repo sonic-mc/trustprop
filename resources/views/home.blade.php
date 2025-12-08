@@ -56,31 +56,32 @@
 
     /* Overlay for better text readability */
     .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            135deg,
-            rgba(30, 64, 175, 0.85) 0%,
-            rgba(37, 99, 235, 0.75) 100%
-        );
-        z-index: 1;
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 64, 175, 0.55) 0%,   /* reduced from 0.85 */
+        rgba(37, 99, 235, 0.45) 100%  /* reduced from 0.75 */
+    );
+    z-index: 1;
+}
 
-    .hero-overlay::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 50%, rgba(252, 211, 77, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.2) 0%, transparent 50%);
-        pointer-events: none;
-    }
+.hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(252, 211, 77, 0.10) 0%, transparent 50%), /* reduced glow */
+        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.12) 0%, transparent 50%);  /* reduced glow */
+    pointer-events: none;
+}
+
 
     /* Slider Controls */
     .slider-controls {
@@ -718,19 +719,19 @@
     <div class="hero-slider">
         <div class="slider-track">
             <div class="slide active">
-                <img src="{{ asset('slider/slider01.jpg') }}" alt="TrustProp Aluminium Project 1">
+                <img src="{{ asset('slider/slider02.jpg') }}" alt="TrustProp Aluminium Project 1">
             </div>
             <div class="slide">
-                <img src="{{ asset('pics/trust6.jpg') }}" alt="TrustProp Aluminium Project 2">
+                <img src="{{ asset('slider/slider02.jpg') }}" alt="TrustProp Aluminium Project 2">
             </div>
             <div class="slide">
-                <img src="{{ asset('pics/trust1.jpg') }}" alt="TrustProp Aluminium Project 3">
+                <img src="{{ asset('slider/slider02.jpg') }}" alt="TrustProp Aluminium Project 3">
             </div>
             <div class="slide">
-                <img src="{{ asset('pics/trust4.jpg') }}" alt="TrustProp Aluminium Project 4">
+                <img src="{{ asset('slider/slider02.jpg') }}" alt="TrustProp Aluminium Project 4">
             </div>
             <div class="slide">
-                <img src="{{ asset('pics/trust6.jpg') }}" alt="TrustProp Aluminium Project 5">
+                <img src="{{ asset('slider/slider02.jpg') }}" alt="TrustProp Aluminium Project 5">
             </div>
         </div>
     </div>
