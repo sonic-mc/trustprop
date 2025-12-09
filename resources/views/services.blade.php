@@ -420,7 +420,7 @@
         <!-- Stainless Steel Balustrades -->
         <div class="service-card" id="balustrades" data-animate>
             <div class="service-image">
-                <img src="{{ asset('pics/serv06.jpg') }}" alt="Stainless steel balustrade project" loading="lazy">
+                <img src="{{ asset('pics/serv01.jpg') }}" alt="Stainless steel balustrade project" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Stainless Steel Balustrades</h3>
