@@ -299,7 +299,7 @@
         <!-- Glass Replacement -->
         <div class="service-card" id="glass-replacement" data-animate>
             <div class="service-image">
-                <i class="fas fa-glass-whiskey"></i>
+                <img src="{{ asset('pics/serv00.jpg') }}" alt="Glass replacement project" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Glass Replacement</h3>
@@ -307,22 +307,28 @@
                     Professional glass replacement services for residential and commercial properties. 
                     We provide quick, efficient replacement of broken or damaged glass with high-quality materials.
                 </p>
+                
+                <h4>Types of Glasses</h4>
+            
                 <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Emergency glass replacement</li>
-                    <li><i class="fas fa-check"></i> All types of glass available</li>
-                    <li><i class="fas fa-check"></i> Professional installation</li>
-                    <li><i class="fas fa-check"></i> Competitive pricing</li>
+                    <li><i class="fas fa-check"></i> 6.38mm Clear Laminated Glass</li>
+                    <li><i class="fas fa-check"></i> 4mm Clear Glass</li>
+                    <li><i class="fas fa-check"></i> 5mm Clear Glass</li>
+                    <li><i class="fas fa-check"></i> 6.38mm SUV Cool Grey / Absolute Black</li>
+                    <li><i class="fas fa-check"></i> 6.38mm White Translucent</li>
                 </ul>
+            
                 <a href="{{ route('contact') }}" class="service-link">
                     Get a Quote <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
+            
         </div>
-
+    
         <!-- Aluminium Pergolas -->
         <div class="service-card" id="aluminium-pergolas" data-animate>
             <div class="service-image">
-                <i class="fas fa-home"></i>
+                <img src="{{ asset('pics/serv02.jpg') }}" alt="Aluminium pergola installation" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Aluminium Pergolas</h3>
@@ -341,11 +347,11 @@
                 </a>
             </div>
         </div>
-
+    
         <!-- Garage Doors -->
         <div class="service-card" id="garage-doors" data-animate>
             <div class="service-image">
-                <i class="fas fa-warehouse"></i>
+                <img src="{{ asset('pics/serv10.webp') }}" alt="Garage door installation" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Garage Doors</h3>
@@ -364,11 +370,11 @@
                 </a>
             </div>
         </div>
-
-        <!-- Windows & Doors -->
+    
+        <!-- Aluminium Windows & Doors -->
         <div class="service-card" id="windows-doors" data-animate>
             <div class="service-image">
-                <i class="fas fa-door-open"></i>
+                <img src="{{ asset('pics/serv03.jpg') }}" alt="Aluminium windows and doors project" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Aluminium Windows & Doors</h3>
@@ -387,11 +393,11 @@
                 </a>
             </div>
         </div>
-
+    
         <!-- Glass Balustrades -->
         <div class="service-card" id="glass-balustrades" data-animate>
             <div class="service-image">
-                <i class="fas fa-border-style"></i>
+                <img src="{{ asset('pics/serv08.jpg') }}" alt="Glass balustrade installation" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Glass Balustrades</h3>
@@ -410,11 +416,11 @@
                 </a>
             </div>
         </div>
-
+    
         <!-- Stainless Steel Balustrades -->
         <div class="service-card" id="balustrades" data-animate>
             <div class="service-image">
-                <i class="fas fa-grip-lines"></i>
+                <img src="{{ asset('pics/serv06.jpg') }}" alt="Stainless steel balustrade project" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Stainless Steel Balustrades</h3>
