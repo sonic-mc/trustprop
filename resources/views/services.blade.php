@@ -356,7 +356,7 @@
             <div class="service-content">
                 <h3>Garage Doors</h3>
                 <p>
-                    High-quality garage door installation and repair services. 
+                    High-quality garage door installation and repair services.
                     We offer a wide range of styles and automation options for convenience and security.
                 </p>
                 <ul class="service-features">
