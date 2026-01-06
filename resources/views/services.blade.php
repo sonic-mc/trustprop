@@ -328,7 +328,7 @@
         <!-- Aluminium Pergolas -->
         <div class="service-card" id="aluminium-pergolas" data-animate>
             <div class="service-image">
-                <img src="{{ asset('pics/image05.jpeg') }}" alt="Aluminium pergola installation" loading="lazy">
+                <img src="{{ asset('pics/image11.jpg') }}" alt="Aluminium pergola installation" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Aluminium Pergolas</h3>
