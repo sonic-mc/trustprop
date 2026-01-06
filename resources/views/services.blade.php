@@ -351,7 +351,7 @@
         <!-- Garage Doors -->
         <div class="service-card" id="garage-doors" data-animate>
             <div class="service-image">
-                <img src="{{ asset('pics/serv10.webp') }}" alt="Garage door installation" loading="lazy">
+                <img src="{{ asset('pics/image01.jpeg') }}" alt="Garage door installation" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Garage Doors</h3>
