@@ -328,7 +328,7 @@
         <!-- Aluminium Pergolas -->
         <div class="service-card" id="aluminium-pergolas" data-animate>
             <div class="service-image">
-                <img src="{{ asset('pics/serv02.jpg') }}" alt="Aluminium pergola installation" loading="lazy">
+                <img src="{{ asset('pics/image05.jpeg') }}" alt="Aluminium pergola installation" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Aluminium Pergolas</h3>
@@ -374,7 +374,7 @@
         <!-- Aluminium Windows & Doors -->
         <div class="service-card" id="windows-doors" data-animate>
             <div class="service-image">
-                <img src="{{ asset('pics/serv03.jpg') }}" alt="Aluminium windows and doors project" loading="lazy">
+                <img src="{{ asset('pics/image02.jpeg') }}" alt="Aluminium windows and doors project" loading="lazy">
             </div>
             <div class="service-content">
                 <h3>Aluminium Windows & Doors</h3>

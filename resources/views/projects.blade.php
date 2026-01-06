@@ -439,16 +439,16 @@
     <!-- Stats Bar -->
     <div class="stats-bar" data-animate>
         <div class="stat-item">
-            <div class="stat-number">1000+</div>
-            <div class="stat-label">Projects Completed</div>
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">Hours of skilled labour invested</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Happy Clients</div>
+            <div class="stat-number">1500+</div>
+            <div class="stat-label">Happy Homeowners</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Years Experience</div>
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Innovative Solutions Implemented</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">100%</div>
@@ -459,10 +459,10 @@
     <!-- Filter Tabs -->
     <div class="filter-tabs" data-animate>
         <button class="filter-tab active" data-filter="all">All Projects</button>
-        <button class="filter-tab" data-filter="residential">Residential</button>
+        {{-- <button class="filter-tab" data-filter="residential">Residential</button>
         <button class="filter-tab" data-filter="commercial">Commercial</button>
         <button class="filter-tab" data-filter="industrial">Industrial</button>
-        <button class="filter-tab" data-filter="hospitality">Hospitality</button>
+        <button class="filter-tab" data-filter="hospitality">Hospitality</button> --}}
     </div>
 
     <!-- Projects Grid -->
@@ -577,7 +577,7 @@
         </div>
     
         <!-- Existing Industrial Project 1 -->
-        <div class="project-card" data-category="industrial" data-animate>
+        {{-- <div class="project-card" data-category="industrial" data-animate>
             <div class="project-image">
                 <span class="project-category">Industrial</span>
                 <img src="{{ asset('project/image01.jpg') }}" alt="Industrial manufacturing facility aluminium and glass project">
@@ -598,10 +598,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     
         <!-- Existing Commercial Project 3 -->
-        <div class="project-card" data-category="commercial" data-animate>
+        {{-- <div class="project-card" data-category="commercial" data-animate>
             <div class="project-image">
                 <span class="project-category">Commercial</span>
                 <img src="{{ asset('project/image02.jpg') }}" alt="Business park aluminium and glass project">
@@ -622,7 +622,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <!-- Empty State (Hidden by default) -->

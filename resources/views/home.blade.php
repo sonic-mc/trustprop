@@ -473,7 +473,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{ asset('pics/trust6.jpg') }}');
+        background-image: url('{{ asset('slider/image2.jpg') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -786,22 +786,29 @@
             <div class="stat-icon">
                 <i class="fas fa-award"></i>
             </div>
-            <div class="stat-number" data-target="15">0</div>
-            <div class="stat-label">Years Experience</div>
+            <div class="stat-number" data-target="40">0</div>
+            <div class="stat-label">Skilled Proffessionals</div>
         </div>
-        <div class="stat-card" data-animate>
+        {{-- <div class="stat-card" data-animate>
             <div class="stat-icon">
                 <i class="fas fa-users"></i>
             </div>
             <div class="stat-number" data-target="500">0</div>
             <div class="stat-label">Happy Clients</div>
-        </div>
+        </div> --}}
         <div class="stat-card" data-animate>
             <div class="stat-icon">
                 <i class="fas fa-project-diagram"></i>
             </div>
-            <div class="stat-number" data-target="1000">0</div>
+            <div class="stat-number" data-target="3">0</div>
             <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card" data-animate>
+            <div class="stat-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">Quality Assuarance</div>
         </div>
         <div class="stat-card" data-animate>
             <div class="stat-icon">

@@ -120,8 +120,8 @@
         }
 
         .logo-icon {
-            width: 55px;
-            height: 55px;
+            width: 400px;
+            height: 150px;
             background: transparent !important;
             border-radius: 0;
             display: flex;
@@ -145,31 +145,7 @@
             transform: scale(1.05);
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .logo-text h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0;
-            color: var(--primary-blue);
-            letter-spacing: -0.5px;
-        }
-
-        .logo-text p {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 1.2px;
-            margin: 0;
-            color: var(--text-medium);
-            text-transform: uppercase;
-            line-height: 1.3;
-        }
+      
 
         /* Navigation */
         nav {
@@ -894,12 +870,8 @@
         <!-- Logo -->
         <a href="{{ route('home') }}" class="logo">
             <div class="logo-icon">
-                <img src="{{ asset('images/trustprop1.png') }}" 
+                <img src="{{ asset('images/loog.png') }}" 
                      alt="TrustProp Aluminium Logo">
-            </div>
-            <div class="logo-text">
-                <h1>TrustProp Aluminium</h1>
-                <p>Built in Trust. Framed in Perfection.</p>
             </div>
         </a>
 
